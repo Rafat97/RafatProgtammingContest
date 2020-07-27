@@ -1,4 +1,6 @@
-
+/**
+URL : https://www.codechef.com/problems/INTEST
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -14,44 +16,33 @@ using namespace __gnu_pbds;
 #define lld long long
 #define U unsigned int
 
-
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
-ll lcm(ll a, ll b)
-{
-    return (a*b)/__gcd(a, b);
-}
-
-
-///sort desc order
-///sort(total.begin(),total.end(), greater<int>())
-unsigned countWords(char *str)
-{
-    int state = 0;
-    unsigned wc = 0;
-    while (*str)
-    {
-        if (*str == ' ' || *str == '\n' || *str == '\t')
-            state = 0;
-        else if (state == 0)
-        {
-            state = 1;
-            ++wc;
-        }
-        ++str;
-    }
-    return wc;
-}
-
-
 void solve(){
+    ll n,divisor,val,cnt = 0;
+    cin>>n>>divisor;
+    while(n--){
+        cin>>val;
+        if(val%divisor == 0){
+            cnt++;
+        }
+    }
+    cout<<cnt<<endl;
+
 }
 
 
 int main()
 {
-    fastoi ;
+    fastoi;
+
+    ll testCase;
+    cin>>testCase;
+    while(testCase)
+    solve();
+
 
     return 0;
 }
+
