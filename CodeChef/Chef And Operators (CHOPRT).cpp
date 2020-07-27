@@ -1,5 +1,5 @@
-/**
-https://www.codechef.com/problems/DIFFSUM
+/***
+Not Solved properly
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -16,23 +16,38 @@ using namespace __gnu_pbds;
 #define lld long long
 #define U unsigned int
 
-
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
+///sort desc order
+///sort(total.begin(),total.end(), greater<int>())
+ll lcm(ll a, ll b)
+{
+    return (a*b)/__gcd(a, b);
+}
+
 
 void solve(){
-    ll a,b;
+    int a,b;
     cin>>a>>b;
     if(a>b)
-        cout<<max(a,b)-min(a,b)<<endl;
+        cout<<">"<<endl;
+    else if(a < b)
+         cout<<"<"<<endl;
     else
-        cout<<max(a,b)+ min(a,b)<<endl;
+        cout<<"="<<endl;
 }
+
 
 
 int main()
 {
-    solve();
+    fastoi;
+
+    ll testCase;
+    cin>>testCase;
+    while(testCase--)
+        solve();
     return 0;
 }
+

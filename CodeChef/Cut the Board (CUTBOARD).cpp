@@ -1,4 +1,6 @@
-
+/**
+Url : https://www.codechef.com/problems/CUTBOARD
+*/
 #include<bits/stdc++.h>
 using namespace std;
 

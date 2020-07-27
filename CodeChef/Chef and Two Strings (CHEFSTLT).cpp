@@ -1,6 +1,4 @@
-/**
-https://www.codechef.com/problems/DIFFSUM
-*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -22,17 +20,27 @@ const int MAX = 1000005;
 
 
 void solve(){
-    ll a,b;
-    cin>>a>>b;
-    if(a>b)
-        cout<<max(a,b)-min(a,b)<<endl;
-    else
-        cout<<max(a,b)+ min(a,b)<<endl;
+    ll minMatch = 0,maxMatch = 0;
+    string str1,str2;
+    cin>>str1>>str2;
+    for(int i = 0 ;i < str1.length();i++){
+        if(str1[i] != str2[i] || str1[i] == '?' || str2[i] == '?')
+            maxMatch++;
+        if( (str1[i] != '?' && str2[i] != '?') && str1[i] != str2[i])
+            minMatch++;
+    }
+    cout<<minMatch<<" "<<maxMatch<<endl;
 }
 
 
 int main()
 {
-    solve();
+    fastoi ;
+    int testCase;
+    cin>>testCase;
+    while(testCase--)
+        solve();
+
+
     return 0;
 }

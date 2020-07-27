@@ -1,5 +1,5 @@
 /**
-https://www.codechef.com/problems/DIFFSUM
+Url : https://www.codechef.com/problems/SNCKYEAR
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,17 +22,23 @@ const int MAX = 1000005;
 
 
 void solve(){
-    ll a,b;
-    cin>>a>>b;
-    if(a>b)
-        cout<<max(a,b)-min(a,b)<<endl;
+    ll year;
+    cin>>year;
+
+    if(year == 2010 || year == 2015 || year == 2016 || year == 2017 || year == 2019 )
+        cout<<"HOSTED"<<endl;
     else
-        cout<<max(a,b)+ min(a,b)<<endl;
+        cout<<"NOT HOSTED"<<endl;
+
 }
 
 
 int main()
 {
-    solve();
+    fastoi ;
+    int testCase;cin>>testCase;
+    while(testCase--)
+        solve();
+
     return 0;
 }

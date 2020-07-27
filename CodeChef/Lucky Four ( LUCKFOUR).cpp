@@ -1,5 +1,6 @@
-/**
-https://www.codechef.com/problems/DIFFSUM
+
+/***
+URL : https://www.codechef.com/problems/LUCKFOUR
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -16,23 +17,39 @@ using namespace __gnu_pbds;
 #define lld long long
 #define U unsigned int
 
-
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
+///sort desc order
+///sort(total.begin(),total.end(), greater<int>())
+ll lcm(ll a, ll b)
+{
+    return (a*b)/__gcd(a, b);
+}
+
 
 void solve(){
-    ll a,b;
-    cin>>a>>b;
-    if(a>b)
-        cout<<max(a,b)-min(a,b)<<endl;
-    else
-        cout<<max(a,b)+ min(a,b)<<endl;
+    string value;
+    ll cnt = 0;
+    cin>>value;
+    for(int i = 0;i<value.length() ; i++){
+        if(value[i] == '4')
+            cnt++;
+    }
+    cout<<cnt<<endl;
+
 }
+
 
 
 int main()
 {
-    solve();
+    fastoi;
+
+    ll testCase;
+    cin>>testCase;
+    while(testCase--)
+        solve();
     return 0;
 }
+
