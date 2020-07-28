@@ -15,46 +15,35 @@ using namespace __gnu_pbds;
 #define U unsigned int
 
 
-#define LSOne(S) (S & (-S))
-#define isBitSet(S, i) ((S >> i) & 1)
-
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
-ll lcm(ll a, ll b)
-{
-    return (a*b)/__gcd(a, b);
-}
-
-
-///sort desc order
-///sort(total.begin(),total.end(), greater<int>())
-unsigned countWords(char *str)
-{
-    int state = 0;
-    unsigned wc = 0;
-    while (*str)
-    {
-        if (*str == ' ' || *str == '\n' || *str == '\t')
-            state = 0;
-        else if (state == 0)
-        {
-            state = 1;
-            ++wc;
-        }
-        ++str;
-    }
-    return wc;
-}
-
 
 void solve(){
+    ll n,k,val,sumTotal = 0 ,sumRavinew = 0;
+    cin>>n>>k;
+    while(n--){
+        cin>>val;
+        sumTotal += val;
+        if(val>=k)
+            sumRavinew += k;
+        else
+            sumRavinew += val;
+    }
+    cout<<sumTotal - sumRavinew<<endl;
 }
 
 
 int main()
 {
     fastoi ;
+    int testCase ;
+    cin>>testCase;
+    while(testCase--)
+        solve();
+
 
     return 0;
 }
+
+
