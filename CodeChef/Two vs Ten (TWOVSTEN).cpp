@@ -14,57 +14,34 @@ using namespace __gnu_pbds;
 #define lld long long
 #define U unsigned int
 
-
 #define LSOne(S) (S & (-S))
 #define isBitSet(S, i) ((S >> i) & 1)
 
 const int MOD = 1000000007;
 const int MAX = 1000005;
 
-ll lcm(ll a, ll b)
-{
-    return (a*b)/__gcd(a, b);
-}
-
-
-///sort desc order
-///sort(total.begin(),total.end(), greater<int>())
-
-///MAP iterator CODE
-/**
-map<ll, ll>::iterator itr;
-for(itr = value.begin();itr != value.end();itr++){
-            sum+=(*itr).second;
-}
-*/
-
-
-unsigned countWords(char *str)
-{
-    int state = 0;
-    unsigned wc = 0;
-    while (*str)
-    {
-        if (*str == ' ' || *str == '\n' || *str == '\t')
-            state = 0;
-        else if (state == 0)
-        {
-            state = 1;
-            ++wc;
-        }
-        ++str;
-    }
-    return wc;
-}
-
 
 void solve(){
+    ll x;
+    cin>>x;
+    if(x%10 == 0)
+        cout<<"0"<<endl;
+    else if(x%5 == 0)
+        cout<<"1"<<endl;
+    else
+        cout<<"-1"<<endl;
 }
 
 
 int main()
 {
     fastoi ;
+    int testCase;
+
+    cin>>testCase;
+    while(testCase--)
+        solve();
 
     return 0;
 }
+
