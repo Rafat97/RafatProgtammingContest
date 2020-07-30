@@ -26,6 +26,12 @@ ll lcm(ll a, ll b)
     return (a*b)/__gcd(a, b);
 }
 
+/**
+#ifndef ONLINE_JUDGE
+freopen("D:/Competitive/inputf.in","r",stdin);
+freopen("D:/Competitive/outputf.in","w",stdout);
+#endif
+*/
 
 ///sort desc order
 ///sort(total.begin(),total.end(), greater<int>())
