@@ -33,6 +33,9 @@ freopen("D:/Competitive/outputf.in","w",stdout);
 #endif
 */
 
+///char to number
+///((int)val[0] - 48) + ((int)val[val.length()-1] - 48)
+
 ///sort desc order
 ///sort(total.begin(),total.end(), greater<int>())
 
