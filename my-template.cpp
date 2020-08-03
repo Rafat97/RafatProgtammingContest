@@ -39,6 +39,12 @@ freopen("D:/Competitive/outputf.in","w",stdout);
 ///sort desc order
 ///sort(total.begin(),total.end(), greater<int>())
 
+///find string
+///val.find(str1[i]) != string::npos
+
+/// 1+2+3+4+ ... +n
+///n(n+1)/2
+
 ///MAP iterator CODE
 /**
 map<ll, ll>::iterator itr;
