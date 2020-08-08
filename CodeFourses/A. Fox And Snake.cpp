@@ -1,4 +1,6 @@
-
+/**
+https://codeforces.com/contest/510/problem/A
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -74,16 +76,43 @@ unsigned countWords(char *str)
 
 
 void solve(){
+    int m,n;
+    bool right = true;
+    cin>>m>>n;
+    for(int i = 0 ;i < m;i++){
+        for(int j = 0 ; j < n ; j++){
+            if(i%2 == 0){
+                cout<<"#";
+            }
+            else{
+                if(right)
+                    if(j == (n-1)){
+                        cout<<"#";
+                    }
+                    else
+                        cout<<".";
+                else
+                    if(j == 0){
+                        cout<<"#";
+                    }
+                    else
+                        cout<<".";
+
+            }
+        }
+        if(i%2 != 0)
+            right = !right;
+
+        cout<<endl;
+
+    }
 }
 
 
 int main()
 {
     fastoi ;
-    int t;
-    cin>>t;
-    while(t--)
-        solve();
+    solve();
 
     return 0;
 }

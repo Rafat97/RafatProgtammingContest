@@ -1,4 +1,6 @@
-
+/**
+URL : https://codeforces.com/problemset/problem/758/A
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -74,16 +76,28 @@ unsigned countWords(char *str)
 
 
 void solve(){
+    int n , maxVal = INT_MIN, val,sum = 0;
+    vector<int> data;
+    cin>>n;
+    for(int i = 0 ; i<n;i++){
+        cin>>val;
+        data.push_back(val);
+        maxVal = max(maxVal, val);
+    }
+    for(int i = 0 ;i < n ;i++){
+        sum +=  maxVal - data[i];
+    }
+    cout<<sum<<endl;
 }
 
 
 int main()
 {
     fastoi ;
-    int t;
-    cin>>t;
+    int t = 1;
     while(t--)
         solve();
 
     return 0;
 }
+
