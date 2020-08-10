@@ -53,8 +53,6 @@ for(itr = value.begin();itr != value.end();itr++){
 }
 */
 
-///MAP find
-///data.find(str) != data.end()
 
 unsigned countWords(char *str)
 {
@@ -76,16 +74,32 @@ unsigned countWords(char *str)
 
 
 void solve(){
+    ll n,a = 0,b = 0,c = 0,val;
+    cin>>n;
+    for(int i = 0 ; i<n ;i++){
+        cin>>val;
+        a += val;
+    }
+    for(int i = 0 ; i<n-1 ;i++){
+        cin>>val;
+        b += val;
+    }
+    for(int i = 0 ; i<n-2 ;i++){
+        cin>>val;
+        c += val;
+    }
+    cout<<a - b<<endl;
+    cout<<b - c<<endl;
 }
 
 
 int main()
 {
     fastoi ;
-    int t;
-    cin>>t;
+    int t = 1;
     while(t--)
         solve();
 
     return 0;
 }
+
