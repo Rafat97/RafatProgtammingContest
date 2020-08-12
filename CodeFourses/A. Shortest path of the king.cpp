@@ -56,14 +56,6 @@ for(itr = value.begin();itr != value.end();itr++){
 ///MAP find
 ///data.find(str) != data.end()
 
-//Upper_bound   auto x=upper_bound(v[a].begin(),v[a].end(),les);les=*x; if(x==v[a].end())break;
-//ll int LCM(ll int a,ll int b) { ll int gcd=__gcd(a,b);ll int lcm=a*b/gcd;return lcm;}
-//ll int bigmod(ll int b, ll int p, ll int m){if(p==0)return 1;if(p%2!=0) return b%m*fun(b,p-1,m)%m;if(p%2==0){ ll int res=fun(b,p/2,m);return (res%m*res%m)%m;}}
-//void seive() { prime[np++]=2;for(i=3; i<=sz; i+=2){if(mark[i]==0){ prime[np++]=i;for(j=i*i; j<=sz; j+=i) mark[j]=1; } }}
-//string add(string s1,string s2) {string s;int j=s1.size()-1,c=0,m; for(int i=s2.size()-1; i>=0; i--) {if(j>=0)m=s2[i]-'0'+s1[j]-'0'+c;else m=s2[i]-'0'+c; if(m>9) { s+=m%10+'0';c=m/10; } else {  c=0;s+=m+'0'; }j--; } if(c!=0) {s+=c+'0'; }reverse(s.begin(),s.end());return s;}
-//int pos;string mul(int n) {string s;for(int i=0; i<pos; i++) { s+="0"; }pos++;int c=0,m; for(int i=s1.size()-1; i>=0; i--) { m=(s1[i]-'0')*n+c;if(m>9) { s+=m%10+'0';c=m/10;} else { c=0; s+=m+'0';} }while(c!=0) { s+=c%10+'0';c=c/10;}    reverse(s.begin(),s.end());return s;}
-
-
 unsigned countWords(char *str)
 {
     int state = 0;
@@ -84,16 +76,45 @@ unsigned countWords(char *str)
 
 
 void solve(){
+    /*
+a8
+h1
+
+b2
+b4
+*/
+    string s,t;
+    cin>>s>>t;
+    cout << max(abs(s[0] - t[0]), abs(s[1] - t[1])) << endl;
+    while(s != t){
+        if(s[0] < t[0] ){
+            cout<<"R";
+            s[0]++;
+        }
+        if(s[0] > t[0] ){
+            cout<<"L";
+            t[0]++;
+        }
+        if(s[1] >  t[1] ){
+            cout<<"D";
+            t[1]++;
+        }
+        if(s[1] <  t[1] ){
+            cout<<"U";
+            s[1]++;
+        }
+        cout<<endl;
+    }
 }
 
 
 int main()
 {
     fastoi ;
-    int t;
-    cin>>t;
+    int t=1;
     while(t--)
         solve();
 
     return 0;
 }
+
