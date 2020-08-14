@@ -56,14 +56,6 @@ for(itr = value.begin();itr != value.end();itr++){
 ///MAP find
 ///data.find(str) != data.end()
 
-///string to long
-// stringstream data(str);
-// data >> ans;
-/// or
-//stol(str);
-
-
-
 //Upper_bound   auto x=upper_bound(v[a].begin(),v[a].end(),les);les=*x; if(x==v[a].end())break;
 //ll int LCM(ll int a,ll int b) { ll int gcd=__gcd(a,b);ll int lcm=a*b/gcd;return lcm;}
 //ll int bigmod(ll int b, ll int p, ll int m){if(p==0)return 1;if(p%2!=0) return b%m*fun(b,p-1,m)%m;if(p%2==0){ ll int res=fun(b,p/2,m);return (res%m*res%m)%m;}}
@@ -92,6 +84,18 @@ unsigned countWords(char *str)
 
 
 void solve(){
+    int n,val;
+
+    map<int,int> data2;
+    cin>>n;
+    for(int i = 0 ;i < 2 * n ; i++){
+        cin>>val;
+        if(data2.find(val) != data2.end()){
+            cout<<val<<" ";
+        }
+        data2[val]++ ;
+    }
+     cout<<endl;
 }
 
 
@@ -105,3 +109,4 @@ int main()
 
     return 0;
 }
+
