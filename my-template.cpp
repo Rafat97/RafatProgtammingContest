@@ -8,7 +8,7 @@ using namespace __gnu_pbds;
 
 #define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
 #define ll long long
-#define fastoi  ios::sync_with_stdio(0); cin.tie(0);
+#define fastoi  ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define printNPrecision(afterDigit,value) cout << fixed << setprecision(12) << value <<endl;
 #define llu unsigned long long
 #define lld long long
@@ -24,6 +24,30 @@ const int MAX = 1000005;
 ll lcm(ll a, ll b)
 {
     return (a*b)/__gcd(a, b);
+}
+ll gcd(ll a, ll b)
+{
+    if(a < b)
+        return gcd(b, a);
+    else if(a%b == 0)
+        return b;
+    else return gcd(b, a%b);
+}
+bool isPrime(int n)
+{
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+
+    return true;
 }
 
 /**
