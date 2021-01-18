@@ -30,16 +30,15 @@ class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         newlist = nums1 + nums2
         newlist.sort()
-        size  = floor(len(newlist) / 2 )
-        if(size%2 == 0):
-            out = ( newlist[size] +  newlist[size-1] ) / 2.0
+        size  = len(newlist)
+        
+        if(size == 0):
+            return 0.00000
+        elif(size%2 == 0):
+            indx = floor(size/2)
+            out = ( newlist[indx] +  newlist[indx-1] ) / 2.0
             return round(out ,5)
         else:
-             # print(size)
-            return round(newlist[size],5)
+            indx = floor(size/2)
+            return round(newlist[indx],5)
         
-       
-        # div = (len(newlist) if len(newlist) != 0 else 1)
-        # output = sum(newlist)/div
-        # size = len(newlist)/2
-        # return output 
